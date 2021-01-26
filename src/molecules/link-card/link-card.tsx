@@ -5,7 +5,7 @@ import { Anchor } from "../../atoms/anchors/anchor";
 import { Button } from "../../atoms/buttons/button";
 import { Icon } from "../../atoms/icons/icon";
 import { Icons } from "../../atoms/constants/icons";
-import { Paragraph } from "../../atoms/typography/paragraph";
+import { Paragraph } from "../../atoms/paragraph/paragraph";
 import { ParagraphSizes } from "../../atoms/constants/paragraph-sizes";
 
 // -------------------------------------------------------------------------------------------------

@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Paragraph } from "../../atoms/typography/paragraph";
+import { Paragraph } from "../../atoms/paragraph/paragraph";
 import "./card.scss";
 
 // -------------------------------------------------------------------------------------------------

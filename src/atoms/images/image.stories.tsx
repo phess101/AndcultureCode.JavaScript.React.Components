@@ -4,7 +4,7 @@ import { text } from "@storybook/addon-knobs";
 
 export default {
     component: Image,
-    title: "Atoms | Images / Image",
+    title: "Atoms | Image",
 };
 
 export const image = () => (

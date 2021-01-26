@@ -6,7 +6,7 @@ import { MemoryRouter } from "react-router-dom";
 
 export default {
     component: LinkCard,
-    title: "Molecules | Cards / Link Cards",
+    title: "Molecules | Link Card",
 };
 
 export const linkCardButton = () => (

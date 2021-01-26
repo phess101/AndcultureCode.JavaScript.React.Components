@@ -7,7 +7,7 @@ import { ButtonStyles } from "../../atoms/constants/button-styles";
 
 export default {
     component: AccessibleList,
-    title: "Molecules | Accessible List / Accessible List",
+    title: "Molecules | Accessible List",
 };
 
 export const accessibleListDefault = () => (

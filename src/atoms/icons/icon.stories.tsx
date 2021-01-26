@@ -7,7 +7,7 @@ import { SvgIcons } from "../constants/svg-icons";
 
 export default {
     component: Icon,
-    title: "Atoms | Icons / Icon",
+    title: "Atoms | Icon",
 };
 
 export const icon = () => (

@@ -4,7 +4,7 @@ import { text } from "@storybook/addon-knobs";
 
 export default {
     component: Card,
-    title: "Molecules | Cards / Cards",
+    title: "Molecules | Card",
 };
 
 export const cardDefault = () => (
