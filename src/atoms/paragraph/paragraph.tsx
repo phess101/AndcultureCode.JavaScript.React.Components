@@ -1,6 +1,7 @@
 import React, { forwardRef } from "react";
 import { ParagraphSizes } from "../constants/paragraph-sizes";
 import { StringUtils } from "andculturecode-javascript-core";
+import "./paragraph.scss";
 
 // -------------------------------------------------------------------------------------------------
 // #region Interfaces
@@ -26,7 +27,8 @@ const Paragraph: React.RefForwardingComponent<
     ParagraphProps
 > = forwardRef(
     (props: ParagraphProps, ref: React.Ref<HTMLParagraphElement>) => {
-        let cssClassNames: Array<any> = [];
+        const CSS_CLASS_NAME = "c-paragraph";
+        let cssClassNames: Array<any> = [CSS_CLASS_NAME];
 
         if (StringUtils.hasValue(props.cssClassName)) {
             cssClassNames.push(props.cssClassName!);

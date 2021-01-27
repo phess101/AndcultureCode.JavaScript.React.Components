@@ -1,0 +1,65 @@
+@import "../../assets/scss/6-components/_component-base";
+
+.c-paragraph {
+    @include font-size("base");
+    @include line-height("base");
+    width: 100%;
+
+    &.-error {
+        background-color: get-color-status("error");
+    }
+
+    .c-paragraph + & {
+        @include margin-top(16px);
+    }
+
+    h1 + & {
+        @include margin-top(32px);
+    }
+
+    h2 + & {
+        @include margin-top(24px);
+    }
+
+    h3 + & {
+        @include margin-top(16px);
+    }
+
+    h4 + & {
+        @include margin-top(16px);
+    }
+
+    h5 + & {
+        @include margin-top(8px);
+    }
+
+    h6 + & {
+        @include margin-top(8px);
+    }
+
+    label + & {
+        @include margin-top(8px);
+    }
+
+    // Size Variations
+
+    &.-large {
+        @include font-size("large");
+        @include line-height("large");
+    }
+
+    &.-small {
+        @include font-size("small");
+        @include line-height("small");
+    }
+
+    &.-xsmall {
+        @include font-size("xsmall");
+        @include line-height("xsmall");
+    }
+
+    &.-xlarge {
+        @include font-size("xlarge");
+        @include line-height("xlarge");
+    }
+}
