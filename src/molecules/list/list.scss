@@ -1,0 +1,11 @@
+@import "../../assets/scss/6-components/_component-base";
+
+ul, ol {
+    > li + li {
+        @include margin-top(10px);
+    }
+
+    &.-plain {
+        list-style: none;
+    }
+}

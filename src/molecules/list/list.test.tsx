@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import { UnorderedList, UnorderedListIconClassName } from "./unordered-list";
+import { List, ListIconClassName } from "./list";
 import faker from "faker";
 import { Icons } from "../../atoms/constants/icons";
 
@@ -10,7 +10,7 @@ describe("UnorderedList", () => {
         const expected = faker.random.words();
 
         // Act
-        const { getByText } = render(<UnorderedList listItems={[expected]} />);
+        const { getByText } = render(<List listItems={[expected]} />);
 
         // Assert
         expect(getByText(expected)).not.toBeNull();
@@ -23,7 +23,7 @@ describe("UnorderedList", () => {
 
         // Act
         const { container } = render(
-            <UnorderedList
+            <List
                 listItems={[expected]}
                 cssClassName={cssClassNameTest}
             />
@@ -34,16 +34,16 @@ describe("UnorderedList", () => {
         expect(result).not.toBeNil();
     });
 
-    test(`when default props and include icon, renders with class name ${UnorderedListIconClassName}`, () => {
+    test(`when default props and include icon, renders with class name ${ListIconClassName}`, () => {
         // Arrange
         const expected = faker.random.words();
 
         // Act
         const { container } = render(
-            <UnorderedList listItems={[expected]} listIcon={Icons.Checkmark} />
+            <List listItems={[expected]} listIcon={Icons.Checkmark} />
         );
         const result = container.querySelector(
-            "." + UnorderedListIconClassName
+            "." + ListIconClassName
         );
 
         // Assert
