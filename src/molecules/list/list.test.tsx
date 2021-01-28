@@ -1,8 +1,7 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import { List, ListIconClassName } from "./list";
+import { List } from "./list";
 import faker from "faker";
-import { Icons } from "../../atoms/constants/icons";
 
 describe("UnorderedList", () => {
     test("when default props, renders items", () => {
@@ -14,6 +13,32 @@ describe("UnorderedList", () => {
 
         // Assert
         expect(getByText(expected)).not.toBeNull();
+    });
+
+    test("when default props, renders as unordered list", () => {
+        // Arrange
+        const expected = faker.random.words();
+
+        // Act
+        const { container } = render(<List listItems={[expected]} />);
+
+        const result = container.getElementsByTagName("ul");
+
+        // Assert
+        expect(result[0]).not.toBeNull();
+    });
+
+    test("when isOrdered prop true, renders as ordered list", () => {
+        // Arrange
+        const expected = faker.random.words();
+
+        // Act
+        const { container } = render(<List isOrdered={true} listItems={[expected]} />);
+
+        const result = container.getElementsByTagName("ol");
+
+        // Assert
+        expect(result[0]).not.toBeNull();
     });
 
     test("when cssClassName prop provided, renders with class name", () => {
@@ -29,22 +54,6 @@ describe("UnorderedList", () => {
             />
         );
         const result = container.querySelector("." + cssClassNameTest);
-
-        // Assert
-        expect(result).not.toBeNil();
-    });
-
-    test(`when default props and include icon, renders with class name ${ListIconClassName}`, () => {
-        // Arrange
-        const expected = faker.random.words();
-
-        // Act
-        const { container } = render(
-            <List listItems={[expected]} listIcon={Icons.Checkmark} />
-        );
-        const result = container.querySelector(
-            "." + ListIconClassName
-        );
 
         // Assert
         expect(result).not.toBeNil();
