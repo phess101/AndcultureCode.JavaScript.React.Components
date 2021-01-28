@@ -36,9 +36,17 @@ export interface ImageProps {
 // #region Component
 // -----------------------------------------------------------------------------------------
 
-const Image: React.FunctionComponent<ImageProps> = (props: ImageProps) => (
-    <img alt={props.altText} className={props.cssClassName} src={props.src} />
-);
+const Image: React.FC<ImageProps> = (props: ImageProps) => {
+    let cssClassNames: Array<any> = ["c-image"];
+
+    if (props.cssClassName) {
+        cssClassNames.push(props.cssClassName);
+    }
+
+    return (
+        <img alt={props.altText} className={cssClassNames.join(" ")} src={props.src} />
+    );
+};
 
 // #endregion Component
 

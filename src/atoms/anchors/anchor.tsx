@@ -33,7 +33,7 @@ Component
 
 const Anchor: React.RefForwardingComponent<Link, AnchorProps> = forwardRef(
     (props: AnchorProps, ref: React.Ref<HTMLAnchorElement>) => {
-        let cssClassNames: string[] = [];
+        let cssClassNames: string[] = ["c-anchor"];
 
         if (props.cssClassName) {
             cssClassNames.push(props.cssClassName);

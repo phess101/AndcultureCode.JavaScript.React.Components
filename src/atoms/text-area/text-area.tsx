@@ -28,6 +28,8 @@ export interface TextAreaProps {
 // -----------------------------------------------------------------------------------------
 
 const TextArea: React.FC<TextAreaProps> = (props: TextAreaProps) => {
+
+    const classNames: string[] = ["c-text-area"];
     const {
         disabled,
         id,
@@ -42,6 +44,7 @@ const TextArea: React.FC<TextAreaProps> = (props: TextAreaProps) => {
 
     return (
         <textarea
+            className={classNames.join(" ")}
             data-testid={testId}
             disabled={disabled}
             id={id}

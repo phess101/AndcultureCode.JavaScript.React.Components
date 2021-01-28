@@ -90,11 +90,9 @@
             }
         }
 
-        &__character-count {
+        .c-input-character-count {
             @include margin-top(8px);
             text-align: right;
-            color: get-color-neutral("90");
-            font-size: get-font-size("xsmall");
         }
     }
 }

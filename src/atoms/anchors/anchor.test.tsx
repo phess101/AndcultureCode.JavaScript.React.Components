@@ -27,7 +27,7 @@ describe("Anchor", () => {
 
     it("when cssClassName provided, assigned class property", async () => {
         // Arrange
-        const expected = faker.random.words();
+        const expected = faker.random.word();
         const url = faker.internet.url();
 
         // Act
@@ -37,11 +37,12 @@ describe("Anchor", () => {
             </MemoryRouter>
         );
 
+        const result = container.getElementsByClassName(expected);
+
+
         // Assert
         await wait(() => {
-            expect(
-                container.querySelector(`[class="${expected}"]`)
-            ).not.toBeNull();
+            expect(result[0]).not.toBeNull();
         });
     });
 

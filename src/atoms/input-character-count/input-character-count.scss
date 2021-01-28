@@ -1,0 +1,6 @@
+@import "../../assets/scss/6-components/_component-base";
+
+.c-input-character-count {
+    color: get-color-neutral("90");
+    font-size: get-font-size("xsmall");
+}
