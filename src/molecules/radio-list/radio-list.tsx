@@ -1,5 +1,5 @@
 import * as React from "react";
-import { UnorderedList } from "../unordered-list/unordered-list";
+import { List } from "../list/list";
 import "./radio-list.scss";
 
 // -----------------------------------------------------------------------------------------
@@ -51,7 +51,7 @@ const RadioList: React.FunctionComponent<RadioListProps> = (props) => {
 
     return (
         <fieldset className={classNames.join(" ")}>
-            <UnorderedList listItems={items} />
+            <List listItems={items} />
         </fieldset>
     );
 };

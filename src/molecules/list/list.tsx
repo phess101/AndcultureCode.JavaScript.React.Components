@@ -1,24 +1,19 @@
 import React from "react";
-import { Icons } from "../../atoms/constants/icons";
 import { StringUtils } from "andculturecode-javascript-core";
+import "./list.scss";
+import { ListStyles } from "../constants/list-styles";
 
-// -------------------------------------------------------------------------------------------------
-// #region Constants
-// -------------------------------------------------------------------------------------------------
-
-export const UnorderedListIconClassName = "-has-icon";
-
-// #endregion Constants
 
 // -----------------------------------------------------------------------------------------
 // #region Interfaces
 // -----------------------------------------------------------------------------------------
 
-export interface UnorderedListProps {
+export interface ListProps {
     cssClassName?: string;
     id?: string;
-    listIcon?: Icons;
+    isOrdered?: boolean;
     listItems: Array<any>;
+    style?: ListStyles;
 }
 
 // #endregion Interfaces
@@ -27,8 +22,8 @@ export interface UnorderedListProps {
 // #region Component
 // -----------------------------------------------------------------------------------------
 
-const UnorderedList: React.FC<UnorderedListProps> = (
-    props: UnorderedListProps
+const List: React.FC<ListProps> = (
+    props: ListProps
 ) => {
     let cssClassNames: string[] = [];
 
@@ -36,16 +31,25 @@ const UnorderedList: React.FC<UnorderedListProps> = (
         cssClassNames.push(props.cssClassName!);
     }
 
-    if (props.listIcon != null) {
-        cssClassNames.push(UnorderedListIconClassName);
-        cssClassNames.push(props.listIcon);
+    if (props.style) {
+        cssClassNames.push(`-${props.style}`);
+    }
+
+    const content = props.listItems?.map((listItem, index) => (
+        <li key={index}>{listItem}</li>
+    ));
+
+    if (props.isOrdered) {
+        return (
+            <ol className={cssClassNames.join(" ")} id={props.id}>
+                {content}
+            </ol>
+        );
     }
 
     return (
         <ul className={cssClassNames.join(" ")} id={props.id}>
-            {props.listItems?.map((listItem, index) => (
-                <li key={index}>{listItem}</li>
-            ))}
+            {content}
         </ul>
     );
 };
@@ -56,6 +60,6 @@ const UnorderedList: React.FC<UnorderedListProps> = (
 // #region Exports
 // -----------------------------------------------------------------------------------------
 
-export { UnorderedList };
+export { List };
 
 // #endregion Exports

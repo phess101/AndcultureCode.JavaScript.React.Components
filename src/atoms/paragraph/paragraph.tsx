@@ -27,8 +27,7 @@ const Paragraph: React.RefForwardingComponent<
     ParagraphProps
 > = forwardRef(
     (props: ParagraphProps, ref: React.Ref<HTMLParagraphElement>) => {
-        const CSS_CLASS_NAME = "c-paragraph";
-        let cssClassNames: Array<any> = [CSS_CLASS_NAME];
+        let cssClassNames: Array<any> = ["c-paragraph"];
 
         if (StringUtils.hasValue(props.cssClassName)) {
             cssClassNames.push(props.cssClassName!);

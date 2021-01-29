@@ -8,5 +8,9 @@ export default {
 };
 
 export const image = () => (
-    <Image src={text("Src", "https://via.placeholder.com/350x150")} />
+    <Image
+        altText={text("Alt", "A description of the image for assistive devices")}
+        cssClassName={text("Class", "")}
+        src={text("Src", "https://via.placeholder.com/350x150")}
+    />
 );

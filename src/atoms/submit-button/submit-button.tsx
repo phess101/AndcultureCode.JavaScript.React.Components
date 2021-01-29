@@ -24,9 +24,15 @@ export interface SubmitButtonProps {
 const SubmitButton: React.FC<SubmitButtonProps> = (
     props: SubmitButtonProps
 ) => {
+    const classNames: string[] = ["c-button"];
+
+    if (props.cssClassName) {
+        classNames.push(props.cssClassName)
+    }
+
     return (
         <input
-            className={props.cssClassName || "c-button"}
+            className={classNames.join(" ")}
             form={props.formId}
             type="submit"
             value={props.buttonText ?? "Submit"}

@@ -1,4 +1,5 @@
 import React from "react";
+import "./input-character-count.scss";
 
 // -------------------------------------------------------------------------------------------------
 // #region Interfaces
@@ -25,7 +26,7 @@ const InputCharacterCount: React.FC<InputCharacterCountProps> = (
 ) => {
     return (
         <div
-            className="c-form-field__bottom__character-count"
+            className="c-input-character-count"
             data-testid={props.testId}>
             {props.currentLength}/{props.maxLength}
         </div>

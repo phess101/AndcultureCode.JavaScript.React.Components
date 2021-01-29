@@ -25,6 +25,8 @@ export interface PasswordInputProps extends InputProperties {
 const PasswordInput: React.FC<PasswordInputProps> = (
     props: PasswordInputProps
 ) => {
+    const classNames: string[] = ["c-password-input"];
+
     const {
         disabled,
         id,
@@ -39,6 +41,7 @@ const PasswordInput: React.FC<PasswordInputProps> = (
 
     return (
         <input
+            className={classNames.join(" ")}
             data-testid={testId}
             disabled={disabled}
             id={id}

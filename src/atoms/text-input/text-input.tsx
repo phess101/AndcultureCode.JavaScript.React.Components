@@ -30,7 +30,7 @@ export interface TextInputProps extends InputProperties {
 // -----------------------------------------------------------------------------------------
 
 const TextInput: React.FC<TextInputProps> = (props: TextInputProps) => {
-    let classNames: string[] = ["c-text-input"];
+    const classNames: string[] = ["c-text-input"];
 
     const {
         ariaLabelledBy,
